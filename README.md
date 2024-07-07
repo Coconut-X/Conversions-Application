@@ -70,7 +70,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### Contact
 
-For more details about the project, visit the [blog post](https://coconut-unit-conversion-application.blogspot.com/2024/07/unit-conversion-application.html) or check out my [LinkedIn](https://linkedin.com/in/your-profile).
+For more details about the project, visit the [blog post](https://coconut-unit-conversion-application.blogspot.com/2024/07/unit-conversion-application.html) or check out my [LinkedIn](https://www.linkedin.com/posts/ali-imran-ab5844290_excited-to-introduce-my-latest-project-activity-7215736931022745600-cONY?utm_source=combined_share_message&utm_medium=member_android).
 
 ---
 
