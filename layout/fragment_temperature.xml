@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".ui.gallery.GalleryFragment">
+
+
+    <TextView
+        android:id="@+id/temperature_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:shadowColor="@color/green"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
+        android:text="@string/temperature"
+        android:textColor="@color/green"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/submit_temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperature_placeholder">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <!--start of C to F conversion-->
+
+            <TextView
+                android:id="@+id/c_to_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="C"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/c_to_f_input"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/c_to_f"
+                android:layout_alignBottom="@+id/c_to_f"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/c_to_f"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_c_to_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/c_to_f_input"
+                android:layout_alignEnd="@id/c_to_f_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_c_to_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_c_to_f"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_c_to_f"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="F"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/c_to_f_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@id/c_to_f_input"
+                android:layout_alignBottom="@id/c_to_f_input"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/from_c_to_f"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="32.00"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of C to F conversion-->
+
+            <!--start of F to C conversion-->
+
+
+            <TextView
+                android:id="@+id/f_to_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/c_to_f"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="F"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/f_to_c_input"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/f_to_c"
+                android:layout_alignBottom="@+id/f_to_c"
+
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/f_to_c"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_f_to_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@id/f_to_c_input"
+                android:layout_alignEnd="@id/f_to_c_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_f_to_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignBaseline="@id/equal_f_to_c"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_f_to_c"
+
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="C"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/f_to_c_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@id/f_to_c_input"
+                android:layout_alignBottom="@id/f_to_c_input"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/from_f_to_c"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="-17.78"
+                android:textColor="@color/yellow"
+
+                android:textSize="20sp" />
+
+            <!--end of F to C conversion-->
+
+
+            <!--start of C to K conversion-->
+
+
+            <TextView
+                android:id="@+id/c_to_k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/f_to_c"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="C"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <EditText
+                android:id="@+id/c_to_k_input"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/c_to_k"
+                android:layout_alignBottom="@+id/c_to_k"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/c_to_k"
+                android:gravity="center"
+                android:hint="0"
+
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_c_to_k"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@id/c_to_k_input"
+                android:layout_alignEnd="@id/c_to_k_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+
+
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/from_c_to_k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignBaseline="@id/equal_c_to_k"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_c_to_k"
+
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="K"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/c_to_k_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@id/c_to_k_input"
+                android:layout_alignBottom="@id/c_to_k_input"
+
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/from_c_to_k"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="273.15"
+
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of C to K conversion-->
+
+            <!--start of K to C conversion-->
+
+
+            <TextView
+                android:id="@+id/k_to_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/c_to_k"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="K"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <EditText
+                android:id="@+id/k_to_c_input"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/k_to_c"
+                android:layout_alignBottom="@+id/k_to_c"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/k_to_c"
+
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_k_to_c"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@id/k_to_c_input"
+                android:layout_alignEnd="@id/k_to_c_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_k_to_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_k_to_c"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_k_to_c"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="C"
+
+                android:textColor="@color/green"
+                android:textColorHint="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/k_to_c_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/k_to_c_input"
+                android:layout_alignBottom="@id/k_to_c_input"
+                android:layout_marginStart="10dp"
+
+                android:layout_toEndOf="@id/from_k_to_c"
+                android:gravity="center"
+                android:text="-273.15"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of K to C conversion-->
+
+            <!--start of f to k conversion-->
+
+
+            <TextView
+                android:id="@+id/f_to_k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/k_to_c"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="F"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <EditText
+                android:id="@+id/f_to_k_input"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/f_to_k"
+                android:layout_alignBottom="@+id/f_to_k"
+
+                android:layout_marginStart="11dp"
+                android:layout_toEndOf="@+id/f_to_k"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+
+                android:id="@+id/equal_f_to_k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/f_to_k_input"
+                android:layout_alignEnd="@id/f_to_k_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/from_f_to_k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_f_to_k"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_f_to_k"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="K"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <TextView
+
+                android:id="@+id/f_to_k_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/f_to_k_input"
+                android:layout_alignBottom="@id/f_to_k_input"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/from_f_to_k"
+                android:gravity="center"
+                android:text="255.37"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of f to k conversion-->
+
+            <!--start of k to f conversion-->
+
+            <TextView
+                android:id="@+id/k_to_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/f_to_k"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="K"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <EditText
+                android:id="@+id/k_to_f_input"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/k_to_f"
+                android:layout_alignBottom="@+id/k_to_f"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/k_to_f"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_k_to_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/k_to_f_input"
+                android:layout_alignEnd="@id/k_to_f_input"
+
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/from_k_to_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignBaseline="@id/equal_k_to_f"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_k_to_f"
+
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="F"
+                android:textColor="@color/green"
+
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/k_to_f_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/k_to_f_input"
+                android:layout_alignBottom="@+id/k_to_f"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/from_k_to_f"
+                android:gravity="center"
+
+                android:text="-459.67"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of k to f conversion-->
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/submit_temperature"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:padding="0dp"
+        android:shadowColor="@color/green"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="7"
+        android:text="@string/submit"
+        android:textColor="@color/green"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

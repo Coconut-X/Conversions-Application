@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/distance_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:shadowColor="@color/green"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
+        android:text="@string/distance"
+        android:textColor="@color/green"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/distance_placeholder"
+        app:layout_constraintBottom_toTopOf="@id/submit_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <!--start of km to m-->
+
+            <TextView
+                android:id="@+id/km_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="km"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/km_to_m_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/km_to_m"
+                android:layout_alignBottom="@+id/km_to_m"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/km_to_m"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20dip"
+
+                app:layout_constraintTop_toTopOf="@id/km_to_m"
+                app:layout_constraintBottom_toBottomOf="@id/km_to_m"
+                app:layout_constraintStart_toEndOf="@id/km_to_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.4"
+                />
+
+            <TextView
+                android:id="@+id/equal_km_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/km_to_m_input"
+                android:layout_alignEnd="@id/km_to_m_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_km_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_km_to_m"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_km_to_m"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/km_to_m_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/km_to_m_input"
+                android:layout_alignBottom="@id/km_to_m_input"
+                android:layout_marginStart="21dp"
+                android:layout_toEndOf="@id/from_km_to_m"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of km to m-->
+
+            <!--start of m to km-->
+
+            <TextView
+                android:id="@+id/m_to_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/km_to_m"
+                android:layout_marginTop="30dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/m_to_km_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/m_to_km"
+                android:layout_alignBottom="@+id/m_to_km"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/m_to_km"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_m_to_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/m_to_km_input"
+                android:layout_alignEnd="@id/m_to_km_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_m_to_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_m_to_km"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_m_to_km"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="km"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/m_to_km_output"
+                android:layout_width="115dp"
+                android:layout_height="38dp"
+                android:layout_alignTop="@id/m_to_km_input"
+                android:layout_alignBottom="@id/m_to_km_input"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/from_m_to_km"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of m to km-->
+
+            <!--start of cm to m-->
+
+            <TextView
+                android:id="@+id/cm_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/m_to_km"
+                android:layout_marginTop="30dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="cm"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/cm_to_m_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/cm_to_m"
+                android:layout_alignBottom="@+id/cm_to_m"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/cm_to_m"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_cm_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/cm_to_m_input"
+                android:layout_alignEnd="@id/cm_to_m_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_cm_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_cm_to_m"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_cm_to_m"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/cm_to_m_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/cm_to_m_input"
+                android:layout_alignBottom="@id/cm_to_m_input"
+                android:layout_marginStart="21dp"
+                android:layout_toEndOf="@id/from_cm_to_m"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- end of cm to m-->
+
+            <!--start of m to cm-->
+
+            <TextView
+                android:id="@+id/m_to_cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cm_to_m"
+                android:layout_marginTop="30dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/m_to_cm_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/m_to_cm"
+                android:layout_alignBottom="@+id/m_to_cm"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/m_to_cm"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_m_to_cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/m_to_cm_input"
+                android:layout_alignEnd="@id/m_to_cm_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_m_to_cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_m_to_cm"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_m_to_cm"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="cm"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/m_to_cm_output"
+                android:layout_width="115dp"
+                android:layout_height="38dp"
+                android:layout_alignTop="@id/m_to_cm_input"
+                android:layout_alignBottom="@id/m_to_cm_input"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/from_m_to_cm"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of m to cm-->
+
+            <!--start of inches to feet-->
+
+            <TextView
+                android:id="@+id/in_to_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/m_to_cm"
+                android:layout_marginTop="30dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="in"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/in_to_ft_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/in_to_ft"
+                android:layout_alignBottom="@+id/in_to_ft"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@+id/in_to_ft"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_in_to_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/in_to_ft_input"
+                android:layout_alignEnd="@id/in_to_ft_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_in_to_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_in_to_ft"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_in_to_ft"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="ft"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/in_to_ft_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/in_to_ft_input"
+                android:layout_alignBottom="@id/in_to_ft_input"
+                android:layout_marginStart="26dp"
+                android:layout_toEndOf="@id/from_in_to_ft"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of inches to feet-->
+
+            <!--start feet to inches-->
+
+            <TextView
+                android:id="@+id/ft_to_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/in_to_ft"
+                android:layout_marginTop="30dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="ft"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/ft_to_in_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ft_to_in"
+                android:layout_alignBottom="@+id/ft_to_in"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/ft_to_in"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_ft_to_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ft_to_in_input"
+                android:layout_alignEnd="@id/ft_to_in_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_ft_to_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_ft_to_in"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_ft_to_in"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="in"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/ft_to_in_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ft_to_in_input"
+                android:layout_alignBottom="@id/ft_to_in_input"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@id/from_ft_to_in"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--end of feet to inches-->
+
+            <!--start feet to meters-->
+
+            <TextView
+                android:id="@+id/ft_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ft_to_in"
+                android:layout_marginTop="30dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="ft"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/ft_to_m_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ft_to_m"
+                android:layout_alignBottom="@+id/ft_to_m"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/ft_to_m"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_ft_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ft_to_m_input"
+                android:layout_alignEnd="@id/ft_to_m_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_ft_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_ft_to_m"
+                android:layout_alignTop="@id/equal_ft_to_m"
+                android:layout_alignBottom="@id/equal_ft_to_m"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_ft_to_m"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/ft_to_m_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ft_to_m_input"
+                android:layout_alignBottom="@id/ft_to_m_input"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@id/from_ft_to_m"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!--start of meters to feet-->
+
+            <TextView
+                android:id="@+id/m_to_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ft_to_m"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/m_to_ft_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/m_to_ft"
+                android:layout_alignBottom="@+id/m_to_ft"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/m_to_ft"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_m_to_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/m_to_ft_input"
+                android:layout_alignEnd="@id/m_to_ft_input"
+                android:layout_alignBottom="@id/m_to_ft_input"
+                android:layout_marginLeft="110dp"
+                android:layout_marginEnd="-35dp"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_m_to_ft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_m_to_ft"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_m_to_ft"
+                android:text="ft"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/m_to_ft_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/m_to_ft_input"
+                android:layout_alignBottom="@id/m_to_ft_input"
+                android:layout_marginStart="35dp"
+
+                android:layout_toEndOf="@id/from_m_to_ft"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@id/from_m_to_ft"
+                app:layout_constraintTop_toTopOf="@id/from_m_to_ft" />
+
+
+            <!--end of meters to feet-->
+
+            <!--start of meters to yards -->
+
+            <TextView
+                android:id="@+id/m_to_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/m_to_ft"
+                android:layout_marginTop="30dp"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/m_to_yd_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/m_to_yd"
+                android:layout_alignBottom="@+id/m_to_yd"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/m_to_yd"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_m_to_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/m_to_yd_input"
+                android:layout_alignEnd="@id/m_to_yd_input"
+                android:layout_alignBottom="@id/m_to_yd_input"
+                android:layout_marginLeft="110dp"
+                android:layout_marginEnd="-35dp"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_m_to_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_m_to_yd"
+
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_m_to_yd"
+
+                android:text="yd"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/m_to_yd_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/m_to_yd_input"
+
+                android:layout_alignBottom="@id/m_to_yd_input"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/from_m_to_yd"
+
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@id/from_m_to_yd"
+                app:layout_constraintTop_toTopOf="@id/from_m_to_yd" />
+
+            <!--end of meters to yards-->
+
+            <!--start of yards to meters -->
+
+            <TextView
+                android:id="@+id/yd_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/m_to_yd"
+                android:layout_marginTop="30dp"
+                android:text="yd"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/yd_to_m_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/yd_to_m"
+                android:layout_alignBottom="@+id/yd_to_m"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/yd_to_m"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_yd_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/yd_to_m_input"
+                android:layout_alignEnd="@id/yd_to_m_input"
+
+                android:layout_alignBottom="@id/yd_to_m_input"
+                android:layout_marginLeft="110dp"
+                android:layout_marginEnd="-35dp"
+
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_yd_to_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_yd_to_m"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_yd_to_m"
+                android:text="m"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/yd_to_m_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/yd_to_m_input"
+                android:layout_alignBottom="@id/yd_to_m_input"
+                android:layout_marginStart="30dp"
+
+                android:layout_toEndOf="@id/from_yd_to_m"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+
+                app:layout_constraintStart_toStartOf="@id/from_yd_to_m"
+                app:layout_constraintTop_toTopOf="@id/from_yd_to_m" />
+
+            <!--end of yards to meters-->
+
+            <!--start of km to miles(mi) -->
+
+            <TextView
+                android:id="@+id/km_to_mi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/yd_to_m"
+                android:layout_marginTop="30dp"
+                android:text="km"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/km_to_mi_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/km_to_mi"
+                android:layout_alignBottom="@+id/km_to_mi"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/km_to_mi"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_km_to_mi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/km_to_mi_input"
+                android:layout_alignEnd="@id/km_to_mi_input"
+
+                android:layout_alignBottom="@id/km_to_mi_input"
+                android:layout_marginLeft="110dp"
+                android:layout_marginEnd="-35dp"
+
+                android:text="="
+                android:textColor="@color/green"
+
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_km_to_mi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_km_to_mi"
+
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_km_to_mi"
+                android:text="mi"
+                android:textColor="@color/green"
+                android:textSize="30sp"
+
+                />
+
+            <TextView
+                android:id="@+id/km_to_mi_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/km_to_mi_input"
+
+                android:layout_alignBottom="@id/km_to_mi_input"
+                android:layout_marginStart="20dp"
+
+                android:layout_toEndOf="@id/from_km_to_mi"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+
+                app:layout_constraintStart_toStartOf="@id/from_km_to_mi"
+                app:layout_constraintTop_toTopOf="@id/from_km_to_mi"
+
+                />
+
+            <!--end of km to miles-->
+
+            <!--start of miles to km-->
+
+            <TextView
+                android:id="@+id/mi_to_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/km_to_mi"
+                android:layout_marginTop="30dp"
+                android:text="mi"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/mi_to_km_input"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/mi_to_km"
+                android:layout_alignBottom="@+id/mi_to_km"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/mi_to_km"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/equal_mi_to_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/mi_to_km_input"
+                android:layout_alignEnd="@id/mi_to_km_input"
+
+                android:layout_alignBottom="@id/mi_to_km_input"
+                android:layout_marginLeft="110dp"
+                android:layout_marginEnd="-35dp"
+
+                android:text="="
+                android:textColor="@color/green"
+
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_mi_to_km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_mi_to_km"
+
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_mi_to_km"
+                android:text="km"
+                android:textColor="@color/green"
+                android:textSize="30sp"
+
+                />
+
+
+            <TextView
+                android:id="@+id/mi_to_km_output"
+
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/mi_to_km_input"
+
+                android:layout_alignBottom="@id/mi_to_km_input"
+                android:layout_marginStart="10dp"
+
+                android:layout_toEndOf="@id/from_mi_to_km"
+                android:gravity="center"
+
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+
+
+                app:layout_constraintStart_toStartOf="@id/from_mi_to_km"
+                app:layout_constraintTop_toTopOf="@id/from_mi_to_km"
+
+                />
+
+            <!--end of miles to km-->
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+<Button
+    android:id="@+id/submit_distance"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="15dp"
+    android:padding="0dp"
+    android:shadowColor="@color/green"
+    android:shadowDx="0"
+    android:shadowDy="0"
+    android:shadowRadius="7"
+    android:text="@string/submit"
+    android:textColor="@color/green"
+    android:textSize="25sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

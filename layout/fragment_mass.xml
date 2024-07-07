@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".ui.slideshow.SlideshowFragment">
+
+    <TextView
+        android:id="@+id/mass_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:shadowColor="@color/green"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
+        android:text="Mass Converter"
+        android:textColor="@color/green"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/submit_mass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mass_placeholder">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <!-- Kilograms to Pounds -->
+            <TextView
+                android:id="@+id/kg_to_lb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="kg"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/kg_to_lb_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/kg_to_lb"
+                android:layout_alignBottom="@+id/kg_to_lb"
+                android:layout_marginStart="26dp"
+                android:layout_toEndOf="@+id/kg_to_lb"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_kg_to_lb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/kg_to_lb_input"
+                android:layout_alignEnd="@id/kg_to_lb_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_kg_to_lb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_kg_to_lb"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_kg_to_lb"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="lb"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/kg_to_lb_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/kg_to_lb_input"
+                android:layout_alignBottom="@id/kg_to_lb_input"
+                android:layout_marginStart="34dp"
+                android:layout_toEndOf="@id/from_kg_to_lb"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Pounds to Kilograms -->
+            <TextView
+                android:id="@+id/lb_to_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kg_to_lb"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="lb"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/lb_to_kg_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lb_to_kg"
+                android:layout_alignBottom="@+id/lb_to_kg"
+                android:layout_marginStart="34dp"
+                android:layout_toEndOf="@+id/lb_to_kg"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_lb_to_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/lb_to_kg_input"
+                android:layout_alignEnd="@id/lb_to_kg_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_lb_to_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_lb_to_kg"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_lb_to_kg"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="kg"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/lb_to_kg_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/lb_to_kg_input"
+                android:layout_alignBottom="@id/lb_to_kg_input"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@id/from_lb_to_kg"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Add more conversions here in the same format -->
+
+            <!-- Grams to Ounces -->
+            <TextView
+                android:id="@+id/g_to_oz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lb_to_kg"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="g"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/g_to_oz_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/g_to_oz"
+                android:layout_alignBottom="@+id/g_to_oz"
+                android:layout_marginStart="42dp"
+                android:layout_toEndOf="@+id/g_to_oz"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_g_to_oz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/g_to_oz_input"
+                android:layout_alignEnd="@id/g_to_oz_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_g_to_oz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_g_to_oz"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_g_to_oz"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="oz"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/g_to_oz_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/g_to_oz_input"
+                android:layout_alignBottom="@id/g_to_oz_input"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@id/from_g_to_oz"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Ounces to Grams -->
+            <TextView
+                android:id="@+id/oz_to_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/g_to_oz"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="oz"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/oz_to_g_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/oz_to_g"
+                android:layout_alignBottom="@+id/oz_to_g"
+                android:layout_marginStart="26dp"
+                android:layout_toEndOf="@+id/oz_to_g"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_oz_to_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/oz_to_g_input"
+                android:layout_alignEnd="@id/oz_to_g_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_oz_to_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_oz_to_g"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_oz_to_g"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="g"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/oz_to_g_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/oz_to_g_input"
+                android:layout_alignBottom="@id/oz_to_g_input"
+                android:layout_marginStart="43dp"
+                android:layout_toEndOf="@id/from_oz_to_g"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+
+            <!-- Gallons to Quarts -->
+            <TextView
+                android:id="@+id/gal_to_qt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/oz_to_g"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="gal"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/gal_to_qt_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/gal_to_qt"
+                android:layout_alignBottom="@+id/gal_to_qt"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@+id/gal_to_qt"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_gal_to_qt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/gal_to_qt_input"
+                android:layout_alignEnd="@id/gal_to_qt_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_gal_to_qt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_gal_to_qt"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_gal_to_qt"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="qt"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/gal_to_qt_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/gal_to_qt_input"
+                android:layout_alignBottom="@id/gal_to_qt_input"
+                android:layout_marginStart="33dp"
+                android:layout_toEndOf="@id/from_gal_to_qt"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+
+            <!-- Quarts to Pints -->
+            <TextView
+                android:id="@+id/qt_to_pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gal_to_qt"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="qt"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/qt_to_pt_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/qt_to_pt"
+                android:layout_alignBottom="@+id/qt_to_pt"
+                android:layout_marginStart="31dp"
+                android:layout_toEndOf="@+id/qt_to_pt"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_qt_to_pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/qt_to_pt_input"
+                android:layout_alignEnd="@id/qt_to_pt_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_qt_to_pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_qt_to_pt"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_qt_to_pt"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="pt"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/qt_to_pt_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/qt_to_pt_input"
+                android:layout_alignBottom="@id/qt_to_pt_input"
+                android:layout_marginStart="33dp"
+                android:layout_toEndOf="@id/from_qt_to_pt"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Pints to Liters -->
+            <TextView
+                android:id="@+id/pt_to_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/qt_to_pt"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="pt"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/pt_to_l_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/pt_to_l"
+                android:layout_alignBottom="@+id/pt_to_l"
+                android:layout_marginStart="31dp"
+                android:layout_toEndOf="@+id/pt_to_l"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_pt_to_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/pt_to_l_input"
+                android:layout_alignEnd="@id/pt_to_l_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_pt_to_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_pt_to_l"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_pt_to_l"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="l"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/pt_to_l_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/pt_to_l_input"
+                android:layout_alignBottom="@id/pt_to_l_input"
+                android:layout_marginStart="53dp"
+                android:layout_toEndOf="@id/from_pt_to_l"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Liters to Milliliters -->
+            <TextView
+                android:id="@+id/l_to_ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pt_to_l"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="l"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/l_to_ml_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/l_to_ml"
+                android:layout_alignBottom="@+id/l_to_ml"
+                android:layout_marginStart="52dp"
+                android:layout_toEndOf="@+id/l_to_ml"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_l_to_ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/l_to_ml_input"
+                android:layout_alignEnd="@id/l_to_ml_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_l_to_ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_l_to_ml"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_l_to_ml"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="ml"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/l_to_ml_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/l_to_ml_input"
+                android:layout_alignBottom="@id/l_to_ml_input"
+                android:layout_marginStart="27dp"
+
+                android:layout_toEndOf="@id/from_l_to_ml"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Milliliters to Cups -->
+            <TextView
+                android:id="@+id/ml_to_cup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/l_to_ml"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="ml"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/ml_to_cup_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ml_to_cup"
+                android:layout_alignBottom="@+id/ml_to_cup"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/ml_to_cup"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_ml_to_cup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ml_to_cup_input"
+                android:layout_alignEnd="@id/ml_to_cup_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_ml_to_cup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_ml_to_cup"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_ml_to_cup"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="cup"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/ml_to_cup_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ml_to_cup_input"
+                android:layout_alignBottom="@id/ml_to_cup_input"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/from_ml_to_cup"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Cups to Liters -->
+            <TextView
+                android:id="@+id/cup_to_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ml_to_cup"
+                android:layout_marginTop="17dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="cup"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/cup_to_l_input"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/cup_to_l"
+                android:layout_alignBottom="@+id/cup_to_l"
+                android:layout_marginStart="9dp"
+                android:layout_toEndOf="@+id/cup_to_l"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/yellow"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/equal_cup_to_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/cup_to_l_input"
+                android:layout_alignEnd="@id/cup_to_l_input"
+                android:layout_marginLeft="100dp"
+                android:layout_marginEnd="-35dp"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/from_cup_to_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/equal_cup_to_l"
+                android:layout_marginStart="65dp"
+                android:layout_toEndOf="@id/equal_cup_to_l"
+                android:shadowColor="@color/green"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="7"
+                android:text="l"
+                android:textColor="@color/green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/cup_to_l_output"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/cup_to_l_input"
+                android:layout_alignBottom="@id/cup_to_l_input"
+                android:layout_marginStart="53dp"
+                android:layout_toEndOf="@id/from_cup_to_l"
+                android:gravity="center"
+                android:shadowColor="@color/yellow"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="0"
+                android:textColor="@color/yellow"
+                android:textSize="20sp" />
+
+            <!-- Add more conversions in the same format as needed -->
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submit_mass"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:padding="0dp"
+        android:shadowColor="@color/green"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="7"
+        android:text="Submit"
+        android:textColor="@color/green"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="295dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="345dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
